@@ -68,7 +68,7 @@ func (cs *ChaincodeServer) Start() error {
 	// create listener and grpc server
 	server, err := internal.NewServer(cs.Address, tlsCfg, cs.KaOpts)
 	if err != nil {
-		return err
+		return cs.Address
 	}
 
 	// register the server with grpc ...
